@@ -10,6 +10,10 @@ def printUsage(err=''):
 	print("USAGE: %s srcpath windowsize [trgPath]" % sys.argv[0])
 	sys.exit(1)
 
+# Parse number of arguments
+if len(sys.argv) < 3:
+	printUsage("Syntax error")
+
 # Parse directory name containing pdb's with all residues
 origdir = sys.argv[1]
 if not os.path.exists(origdir):
